@@ -1,12 +1,63 @@
-\documentclass[12pt]{article}
-\usepackage{lingmacros}
-\usepackage{tree-dvips}
-\begin{document}
+\documentclass[11pt]{extarticle}
+\usepackage{mathtools}
+\usepackage[a4paper, total={6in, 8.5in}]{geometry}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{pythonhighlight}
+\usepackage{pdfpages}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{pythonhighlight}
+\usepackage{changepage}
+\usepackage{slashbox}
+\usepackage{floatrow}
+\usepackage{subfig}
+\floatsetup[table]{capposition=top}
 
-\section*{Q1}
+\sloppy
+\definecolor{lightgray}{gray}{0.5}
+\setlength{\parindent}{0pt}
+\setlength{\headheight}{14pt}
 
-Nearest Neighbor and Classification Tree classifiers overfit to data, \textit{i.e.} they memorized the training data and are more prone to making errors in the
-future classifications. On the other hand,  Discriminant Analysis and Na\"ive Bayesian approaches are better in terms of generalizing, \textit{i.e.} making inferences 
-from already available training data.
+\renewcommand{\headrulewidth}{.4mm} % header line width
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhfoffset[L]{-1cm} % left extra length
+\fancyhfoffset[R]{-1cm} % right extra length
+\rhead{\bfseries Kutay U\u{g}urlu 2232841}
+\lhead{EE583 Homework 1}
+\rfoot{}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\author{Kutay U\u{g}urlu 2232841}
+\begin{document}   
+
+
+\fancyfoot[C]{\thepage}
+\title{\LARGE \LARGE EE583 Pattern Recognition HW1}
+
+\maketitle{\LARGE}
+
+\pagebreak
+\section*{Question 1}
+
+{\centering
+    \begin{figure}[h]
+        \includegraphics[width=12cm, height=8cm]{q1_output.png}
+        \caption{Decision Boundaries for flower classes}
+        \label{fig:q1figure}
+    \end{figure}
+}
+
+In Figure \ref{fig:q1figure} 
 
 \end{document}
+
