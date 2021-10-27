@@ -6,5 +6,4 @@ HW1/*.asv
 HW1/*latexmk
 HW1/__latexindent_temp.tex
 HW1/test.m
-
-
+.vscode
