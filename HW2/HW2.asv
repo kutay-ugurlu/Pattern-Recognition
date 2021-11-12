@@ -1,0 +1,8 @@
+%% Q1 
+sigma_1 = [0.5 0.3;0.3 0.8];
+mu_1 = [-0.75;0.75];
+X = mvnrnd(mu_1,sigma_1,10);
+mu_1_hat = mean(X);
+sigma_1_hat = 
+
+
