@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.14.0 (MiKTeX 21.10) (format=lualatex 2021.11.3)  12 NOV 2021 15:27
+This is LuaHBTeX, Version 1.14.0 (MiKTeX 21.10) (format=lualatex 2021.11.3)  16 NOV 2021 00:34
  restricted system commands enabled.
  file:line:error style messages enabled.
 **"d:/EE5.1/Pattern Recognition/HW2/main"
@@ -453,28 +453,28 @@ File: l3backend-luatex.def 2021-10-18 L3 backend support: PDF output (LuaTeX)
 ) (./main.aux)
 \openout1 = main.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 4
-1.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 50.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 5
+0.
 
 (C:/Users/KutayUgurlu/AppData/Local/Programs/MiKTeX/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: luatex
@@ -563,41 +563,95 @@ Package: fr-subfig 2007/12/24 v0.1g (beta) floatrow: additions for subfig
 \FBsc@max=\skip84
 \FBso@max=\skip85
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 47.
+(C:/Users/KutayUgurlu/AppData/Local/Programs/MiKTeX/tex/latex/listings/lstlang1
+.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 72.
 
 
 (C:/Users/KutayUgurlu/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 47.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 72.
 
 (C:/Users/KutayUgurlu/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {C:/Users/KutayUgurlu/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
+
+ []
+
+(./HW2_Q1.m)
+Overfull \hbox (95.92976pt too wide) in paragraph at lines 86--106
+[]$ $[]$ $[]$
+ []
+
+
+Overfull \hbox (95.92976pt too wide) in paragraph at lines 86--106
+[]$ $[]$ $[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--111
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--111
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--111
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
+
+ []
+
 [2] (./main.aux))
 
 Here is how much of LuaTeX's memory you used:
- 8790 strings out of 478086
- 100000,552014 words of node,token memory allocated
+ 9570 strings out of 478086
+ 100000,794899 words of node,token memory allocated
  558 words of node memory still in use:
    6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 7 attribute, 66 glue_spec,
  7 attribute_list, 1 write nodes
-   avail lists: 1:1,2:114,3:16,4:14,5:52,6:14,7:250,8:1,9:100,10:4,11:10
- 28839 multiletter control sequences out of 65536+600000
- 47 fonts using 4260623 bytes
- 70i,11n,76p,484b,306s stack positions out of 5000i,500n,10000p,200000b,80000s
+   avail lists: 1:1,2:1455,3:152,4:216,5:2224,6:70,7:4256,8:27,9:4512,10:25,11:2
+78
+ 29601 multiletter control sequences out of 65536+600000
+ 55 fonts using 4778167 bytes
+ 70i,11n,76p,484b,1044s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Users/KutayUgurlu/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc
-}<C:/Users/KutayUgurlu/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx1
-0.pfb><C:/Users/KutayUgurlu/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/
-lmbx12.pfb><C:/Users/KutayUgurlu/AppData/Local/Programs/MiKTeX/fonts/type1/publi
-c/lm/lmr10.pfb><C:/Users/KutayUgurlu/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/lm/lmr12.pfb><C:/Users/KutayUgurlu/AppData/Local/Programs/MiKTeX/fonts/typ
-e1/public/lm/lmr17.pfb>
-Output written on main.pdf (2 pages, 122086 bytes).
+}{C:/Users/KutayUgurlu/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.e
+nc}<C:/Users/KutayUgurlu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
+ts/cm/cmex10.pfb><C:/Users/KutayUgurlu/AppData/Local/Programs/MiKTeX/fonts/type1
+/public/amsfonts/cm/cmmi10.pfb><C:/Users/KutayUgurlu/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/KutayUgurlu/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/KutayUgurlu/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/K
+utayUgurlu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.p
+fb><C:/Users/KutayUgurlu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
+ts/cm/cmsy8.pfb><C:/Users/KutayUgurlu/AppData/Local/Programs/MiKTeX/fonts/type1/
+public/lm/lmbx10.pfb><C:/Users/KutayUgurlu/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/lm/lmbx12.pfb><C:/Users/KutayUgurlu/AppData/Local/Programs/MiKTeX/fo
+nts/type1/public/lm/lmr10.pfb><C:/Users/KutayUgurlu/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/lm/lmr12.pfb><C:/Users/KutayUgurlu/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/KutayUgurlu/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/lm/lmr6.pfb>
+Output written on main.pdf (2 pages, 223152 bytes).
 
-PDF statistics: 30 PDF objects out of 1000 (max. 8388607)
+PDF statistics: 65 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 100000000)
 
