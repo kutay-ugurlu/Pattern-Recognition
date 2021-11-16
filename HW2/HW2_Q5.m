@@ -38,9 +38,9 @@ maxlim = max(abs(X(:)))*1.1;
 axis([-maxlim maxlim -maxlim maxlim]);
 axis square
 grid on
-setosa = Xfit1(1:50,:);
-versicolor = Xfit1(50:100,:);
-virginica = Xfit1(100:150,:);
+setosa = Xfit1(1:50,2);
+versicolor = Xfit1(50:100,2);
+virginica = Xfit1(100:150,2);
 figure
 histogram(setosa)
 hold on 
