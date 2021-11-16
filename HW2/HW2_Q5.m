@@ -23,8 +23,8 @@ Xfit1 = repmat(meanX,n,1) + score(:,1)*coeff(:,1)';
 t = [min(score(:,1))-.2, max(score(:,1))+.2];
 endpts = [meanX + t(1)*dirVect'; meanX + t(2)*dirVect'];
 plot(endpts(:,1),endpts(:,2),'k-');
-X1 = [X(:,1) Xfit1(:,1) ];
-X2 = [X(:,2) Xfit1(:,2) ];
+X1 = [X(:,1) Xfit1(:,1)];
+X2 = [X(:,2) Xfit1(:,2)];
 hold on
 plot(X1(1:50,:)',X2(1:50,:)','g-', X(1:50,1),X(1:50,2),'ko');
 hold on 
