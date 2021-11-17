@@ -1,23 +1,26 @@
 m = 50;
 mu = [0 0];
 Sigma = [0.25 0.3; 0.3 1];
-x1 = -3:0.05:3;
-x2 = -3:0.05:3;
+x1 = -3:0.02:3;
+x2 = -3:0.02:3;
 [X1,X2] = meshgrid(x1,x2);
 X = [X1(:) X2(:)];
 y = mvnpdf(X,mu,Sigma);
 y = reshape(y,length(x2),length(x1));
 subplot(1,2,1)
-surf(x1,x2,y)
+surf(x1,x2,y,'EdgeColor','interp','EdgeAlpha',1)
 title('Original Distribution')
+xlabel('X1')
+ylabel('X2')
+zlabel('Multivariate PDF')
 
 %% Parzen 
 mu = [0 0];
 Sigma = [0.25 0.3; 0.3 1];
 n = 50; 
 X_sampled = mvnrnd(mu, Sigma, n);
-h = 1.75;
-V = h/n^2;
+h = 1.55;
+V = h/n;
 pn = zeros(size(X,1),1);
 Estimated_density = zeros(size(X,1),1);
 for i = 1:size(X,1)
@@ -31,8 +34,11 @@ for i = 1:size(X,1)
 end
 subplot(1,2,2)
 Estimated_density = reshape(Estimated_density,length(x2),length(x1));
-surf(x1,x2,Estimated_density)
+surf(x1,x2,Estimated_density,'EdgeColor','interp','EdgeAlpha',1)
 title('Estimated Density')
+xlabel('X1')
+ylabel('X2')
+zlabel('Estimated Multivariate PDF')
 
     
 

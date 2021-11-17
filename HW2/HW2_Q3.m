@@ -86,8 +86,8 @@ title({'Estimated Parameters',['Error rate is ',num2str(error_rate_2)]})
 
 %% Test Data
 
-X1 = mvnrnd(mu_1,sigma,m);
-X2 = mvnrnd(mu_2,sigma,m);
+X1_test = mvnrnd(mu_1,sigma,m);
+X2_test = mvnrnd(mu_2,sigma,m);
 
 %% Test Data Known 
 subplot(2,2,3)
@@ -95,9 +95,9 @@ subplot(2,2,3)
 x0 = 0.5 * (mu_1+mu_2); % = 0 
 A = (mu_1-mu_2)'*(inv(sigma))'; % =  -1.1111   -2.2222
 % Then decision boundary -> -x1-2x2 = 0 -> x1 = -2x2
-scatter(X1(:,1),X1(:,2),'red','MarkerEdgeAlpha',edgealpha)
+scatter(X1_test(:,1),X1_test(:,2),'red','MarkerEdgeAlpha',edgealpha)
 hold on 
-scatter(X2(:,1),X2(:,2),'blue','MarkerEdgeAlpha',edgealpha)
+scatter(X2_test(:,1),X2_test(:,2),'blue','MarkerEdgeAlpha',edgealpha)
 hold on 
 x = linspace(-5,5,100);
 plot(x,-2*x)
@@ -107,7 +107,7 @@ ylim([-10,10])
 conf_mat_1 = zeros(2,2);
 
 for i = 1:m
-    x = X1(i,:);
+    x = X1_test(i,:);
     eval_at_line = A * transpose(x);
     if eval_at_line > 0 
         conf_mat_1(1,1) = conf_mat_1(1,1) + 1;
@@ -115,7 +115,7 @@ for i = 1:m
         conf_mat_1(2,1) = conf_mat_1(2,1) + 1;
     end
     
-    x = X2(i,:);
+    x = X2_test(i,:);
     eval_at_line = A * transpose(x);
     if eval_at_line > 0 
         conf_mat_1(2,2) = conf_mat_1(1,2) + 1;
@@ -129,9 +129,9 @@ title({'Known Parameters',['Error rate is ',num2str(error_rate_1)]})
 
 %% ML Estimation Test data
 subplot(2,2,4)
-scatter(X1(:,1),X1(:,2),'red','MarkerEdgeAlpha',edgealpha)
+scatter(X1_test(:,1),X1_test(:,2),'red','MarkerEdgeAlpha',edgealpha)
 hold on 
-scatter(X2(:,1),X2(:,2),'blue','MarkerEdgeAlpha',edgealpha)
+scatter(X2_test(:,1),X2_test(:,2),'blue','MarkerEdgeAlpha',edgealpha)
 hold on 
 syms f(x)
 f(x) = x0(2) - A_ML(1)/A_ML(2) * (x-x0(1));
@@ -142,7 +142,7 @@ ylim([-10,10])
 conf_mat_2 = zeros(2,2);
 
 for i = 1:m
-    x = X1(i,:);
+    x = X1_test(i,:);
     eval_at_line = A_ML * transpose(x);
     if eval_at_line > 0 
         conf_mat_2(1,1) = conf_mat_2(1,1) + 1;
@@ -150,7 +150,7 @@ for i = 1:m
         conf_mat_2(2,1) = conf_mat_2(2,1) + 1;
     end
     
-    x = X2(i,:);
+    x = X2_test(i,:);
     eval_at_line = A_ML * transpose(x);
     if eval_at_line > 0 
         conf_mat_2(2,2) = conf_mat_2(1,2) + 1;
@@ -161,4 +161,25 @@ end
 error_rate_2 = (conf_mat_2(1,2) + conf_mat_2(2,1)) / (2*m);
 title({'Estimated Parameters',['Error rate is ',num2str(error_rate_2)]})
 
-
+figure 
+suptitle('Test and Training Data')
+subplot(2,2,1)
+scatter(X1(:,1),X1(:,2))
+title('X1')
+xlim([-10,10])
+ylim([-10,10])
+ylabel('Train','FontWeight','bold')
+subplot(2,2,2)
+scatter(X2(:,1),X2(:,2))
+title('X2')
+xlim([-10,10])
+ylim([-10,10])
+subplot(2,2,3)
+scatter(X1_test(:,1),X1_test(:,2))
+xlim([-10,10])
+ylim([-10,10])
+ylabel('Test','FontWeight','bold')
+subplot(2,2,4)
+scatter(X2_test(:,1),X2_test(:,2))
+xlim([-10,10])
+ylim([-10,10])

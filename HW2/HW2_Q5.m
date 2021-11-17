@@ -31,11 +31,23 @@ hold on
 plot(X1(50:100,:)',X2(50:100,:)','r-', X(50:100,1),X(50:100,2),'ko');
 hold on 
 plot(X1(100:150,:)',X2(100:150,:)','b-', X(100:150,1),X(100:150,2),'ko');
-legend('PCA Line','setosa','versicolor','virginica')
+
+L(1) = plot(nan, nan, 'k-');
+L(2) = plot(nan, nan, 'g-');
+L(3) = plot(nan, nan, 'r-');
+L(4) = plot(nan, nan, 'b-');
+
+legend_cell = cell(4,1);
+legend_cell{1} = 'PCA Line';
+legend_cell{2} = 'setosa';
+legend_cell{3} = 'versicolor';
+legend_cell{4} = 'virginica';
+
+legend(L,legend_cell,'Location','southeast');
 
 hold off
 maxlim = max(abs(X(:)))*1.1;
-axis([-maxlim maxlim -maxlim maxlim]);
+axis([0 8 -1 3]);
 axis square
 grid on
 setosa = Xfit1(1:50,2);
