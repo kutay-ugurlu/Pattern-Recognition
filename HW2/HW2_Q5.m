@@ -38,7 +38,7 @@ L(3) = plot(nan, nan, 'r-');
 L(4) = plot(nan, nan, 'b-');
 
 legend_cell = cell(4,1);
-legend_cell{1} = 'PCA Line';
+legend_cell{1} = 'PCA Projection Line';
 legend_cell{2} = 'setosa';
 legend_cell{3} = 'versicolor';
 legend_cell{4} = 'virginica';
@@ -47,7 +47,7 @@ legend(L,legend_cell,'Location','southeast');
 
 hold off
 maxlim = max(abs(X(:)))*1.1;
-axis([0 8 -1 3]);
+axis([0 8 -0.5 3]);
 axis square
 grid on
 setosa = Xfit1(1:50,2);

@@ -1,5 +1,5 @@
 % Part i - ML Estimate of mean 
-n = 2;
+n = 25;
 sigma_sq = 0.49;
 X = sqrt(sigma_sq) * randn(n,1) + 3;
 mu_x_ML = mean(X);
