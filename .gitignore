@@ -1,9 +1,10 @@
 */__latexindent_temp.tex
 .vscode
-*/*.log
-*/*.aux
-*/*.fls
-*/*.log
-*/*.gz
-*/*.asv
-*/*latexmk
+**/*.log
+**/*.aux
+**/*.fls
+**/*.log
+**/*.gz
+**/*.asv
+**/*latexmk
+**/*.out
