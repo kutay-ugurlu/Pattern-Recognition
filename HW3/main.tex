@@ -1,6 +1,6 @@
 \documentclass[11pt]{extarticle}
 \usepackage{mathtools}
-\usepackage[a4paper, total={6in, 8.5in}]{geometry}
+\usepackage[a4paper, total={6in, 8.5in}, top=1in, bottom=1in, left=1in, right=1in]{geometry}
 \usepackage{graphicx}
 \usepackage{subfig}
 \usepackage{amssymb}
@@ -119,10 +119,8 @@ BoxConstraint parameter manually. I observed that setting it to 15 resulted in 2
 Using four features, having higher dimensions, have resulted in SVM Model linearly separating the feature space. Hence,
 for both Cross Validation Experiments, the loss rate was 0. On the other hand, when I decreased the number of utilized dimensions
 to 1, LOOCV loss was slightly less than the 10-Fold CV loss. This may be attributed to the fact that LOOCV utilizes
-more training data than kfold, resulting in higher more accurate test set predictions, considering that the
+more training data than kfold, leaving just one data point out of training and using it as validation set, resulting in higher more accurate test set predictions, considering that the
 number of training data is not so large that it causes overfitting.
-
-\pagebreak
 
 \section{Question 3}
 
@@ -142,7 +140,12 @@ number of training data is not so large that it causes overfitting.
 \vspace*{-1cm}
 Changing feature pairs that are utilized in SVM classification resulted in different distributions. Features 3 and 4
 provides a more linearly separable feature space than 1 and 2. The resultant numbers of support vectors 196 and 58 also
-indicates the same result. In addition, this is also observable in scatter plots.
+indicates the same result. In addition, this is also observable in scatter plots. Separating three classes based on Features
+1 and 2 was easier for linearly separable class setosa, whose boundary is observed to be linear in Figure \ref{fig:q3fig}. Hence,
+there are 8 support vectors for the SVM models that are separating setosa and other classes. However, the remaining 2
+classes are difficult to separate, so there are 25 support vectors needed.
+
+\pagebreak
 
 \section{Question 4}
 
