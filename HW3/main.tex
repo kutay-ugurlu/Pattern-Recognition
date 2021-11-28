@@ -92,22 +92,22 @@
 \end{center}
 
 The number of support vectors was minimum for the features 3 \& 4. One can notice the opposite relationship between the
-linear seperablity of the feature space and the number of support vectors.
+linear separability of the feature space and the number of support vectors.
 However, it is important to note that one can achieve the same number of minimum vectors for other features by setting the
-BoxConstraint parameter manually. I observed that setting it to 15 resulted in 2 suuport vectors for two cases.
+BoxConstraint parameter manually. I observed that setting it to 15 resulted in 2 support vectors for two cases.
 
 \pagebreak
 
 \section{Question 2}
 
-\subsection{4 Features}
+\subsection*{4 Features}
 \begin{minipage}{0.3\textwidth}
     $kfold \ loss = 0$
 \end{minipage}
 \begin{minipage}{0.6\textwidth}
     $LOOCV \ loss = 0$
 \end{minipage}
-\subsection{1 Feature}
+\subsection*{1 Feature}
 \begin{minipage}{0.3\textwidth}
     $kfold \ loss = 0.1900$
 \end{minipage}
@@ -116,11 +116,13 @@ BoxConstraint parameter manually. I observed that setting it to 15 resulted in 2
 \end{minipage}
 \vspace*{0.5cm}
 
-Using four features, having higher dimensions, have resulted in SVM Model linearly seperating the feature space. Hence
+Using four features, having higher dimensions, have resulted in SVM Model linearly separating the feature space. Hence,
 for both Cross Validation Experiments, the loss rate was 0. On the other hand, when I decreased the number of utilized dimensions
-to 1, LOOCV loss was slightly less than the 10 Fold CV loss. This may be attributed to the fact that LOOCV utilizes
+to 1, LOOCV loss was slightly less than the 10-Fold CV loss. This may be attributed to the fact that LOOCV utilizes
 more training data than kfold, resulting in higher more accurate test set predictions, considering that the
 number of training data is not so large that it causes overfitting.
+
+\pagebreak
 
 \section{Question 3}
 
@@ -133,18 +135,28 @@ number of training data is not so large that it causes overfitting.
             \subfloat[]{\includegraphics[width = 2in, height = 1.5in]{Q3_1.png}}   \\
         \end{tabular}
         \caption{Support Vectors for different feature pairs}
-        \label{fig:q1fig}
+        \label{fig:q3fig}
     \end{figure}
 \end{center}
 
+\vspace*{-1cm}
 Changing feature pairs that are utilized in SVM classification resulted in different distributions. Features 3 and 4
-provides a more linearly seperable feature space than 1 and 2. The resultant numbers of support vectors 196 and 58 also
-indicates the same result. In addition this is also observable in scatter plots.
+provides a more linearly separable feature space than 1 and 2. The resultant numbers of support vectors 196 and 58 also
+indicates the same result. In addition, this is also observable in scatter plots.
 
 \section{Question 4}
 
-
-
+The objective function, as a function of BoxConstraint and KernelScale, is optimized using Bayesian optimization.
+Hence, these parameters determines the cross validation loss and selecting them is a crucial part of optimizing an
+SVM classifier, keeping in mind that rbf as kernel function is fixed. In addition, I have tried polynomial kernel
+function, and observed that optimized cross validation loss is different from the one that rbf kernel function is
+able to achieve. Therefore,
+\begin{itemize}
+    \item Box Constraint
+    \item Kernel Scale
+    \item Kernel Function
+\end{itemize}
+are the hyperparameters that can be optimized in an SVM to achieve better cross validation success, in terms of loss.
 
 \pagebreak
 \section{APPENDIX}
