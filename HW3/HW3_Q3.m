@@ -55,6 +55,7 @@ for j = 1:3
 SVM_SV = X(SVMModels{j}.IsSupportVector,:);
 h(j+6) = scatter(SVM_SV(:,1),SVM_SV(:,2),'CData',repmat(colors(j,:),size(SVM_SV,1),1),'SizeData',sizes(j)*ones(size(SVM_SV,1),1));
 hold on 
+sum(SVMModels{j}.IsSupportVector)
 end
 
 legend(h,{'setosa region','versicolor region','virginica region',...
@@ -88,6 +89,7 @@ for j = 1:numel(classes)
     indx = strcmp(Y,classes(j)); % Create binary classes for each classifier
     SVMModels{j} = fitcsvm(X,indx,'ClassNames',[false true],'Standardize',true,...
         'KernelFunction','rbf','BoxConstraint',1);
+    sum(SVMModels{j}.IsSupportVector)
 end
 
 d = 0.02;
