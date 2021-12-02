@@ -34,7 +34,8 @@ accuracy = sum(diag(confusion_matrix)) / size(X,1)
 
 
 %%
-C = [mean(VERSICOLOR);mean(VIRGINICA);mean(SETOSA)];
+C = randi(15,3,2);
+% C = [mean(VERSICOLOR);mean(VIRGINICA);mean(SETOSA)];
 idx2Region = kmeans(XGrid,3,'MaxIter',1,'Start',C);
     % Assigns each node in the grid to the closest centroid
     
