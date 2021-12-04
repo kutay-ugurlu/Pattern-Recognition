@@ -45,6 +45,21 @@ gscatter(X(:,1),X(:,2),idx2);
 mat = tabulate(idx2);
 title({'Mahalanobis Distance',['Clustering: ',mat2str(mat(:,2:end),3)]})
 
+%% Kernel Scale 1 
+figure
+idx2 = spectralcluster(X,k,'NumNeighbors',size(X,1),'KernelScale',1);
+gscatter(X(:,1),X(:,2),idx2);
+mat = tabulate(idx2);
+title({'Kernel Scale: 1',['Clustering: ',mat2str(mat(:,2:end),3)]})
+
+%% Kernel Scale 15
+figure
+idx2 = spectralcluster(X,k,'NumNeighbors',size(X,1),'KernelScale',15);
+gscatter(X(:,1),X(:,2),idx2);
+mat = tabulate(idx2);
+title({'Kernel Scale 15',['Clustering: ',mat2str(mat(:,2:end),3)]})
+
+
 %%
 figHandles = findall(0,'Type','figure'); 
 
