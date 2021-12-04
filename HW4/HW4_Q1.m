@@ -11,9 +11,9 @@ VIRGINICA = X(virginica_idx,:);
 figure;
 plot(SETOSA(:,1),SETOSA(:,2),'k*','MarkerSize',5);
 hold on 
-plot(VERSICOLOR(:,1),VERSICOLOR(:,2),'ko','MarkerSize',5);
+plot(VERSICOLOR(:,1),VERSICOLOR(:,2),'bo','MarkerSize',5);
 hold on 
-plot(VIRGINICA(:,1),VIRGINICA(:,2),'k+','MarkerSize',5);
+plot(VIRGINICA(:,1),VIRGINICA(:,2),'r+','MarkerSize',5);
 title 'Fisher''s Iris Data';
 xlabel 'Petal Lengths (cm)'; 
 ylabel 'Petal Widths (cm)';
