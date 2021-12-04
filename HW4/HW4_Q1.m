@@ -30,7 +30,6 @@ Cs{4} = [4.5 2.1; 4.8 1.55; 3.2 3.2];
 Cs{5} = [4.2 1.8; 5.2 1.78; 2.5 2.1];
 Cs{6} = [4.1 1.4; 5.5 1.89; 1.8 1.05];
 Cs{7} = [4   1  ; 6   2   ; 1.5 0.3];
-
 gnd_truth = repelem([3;1;2],50,1);
 accs = [];
 CONFMATS = {};
@@ -42,6 +41,7 @@ C_old = C_new;
 accs(end+1) = accuracy;
 CONFMATS{end+1} = confusion_matrix;
 end
+figure
 plot(accs)
 title({'\bf Accuracy vs Iterations'})
 ylabel('Accuracy')
@@ -52,15 +52,7 @@ x2 = min(X(:,2)):0.01:max(X(:,2));
 [x1G,x2G] = meshgrid(x1,x2);
 XGrid = [x1G(:),x2G(:)]; % Defines a fine grid on the plot
 
-%% Ground Truth vector 
-confusion_matrix = confusionmat(gnd_truth,idx);
-accuracy = sum(diag(confusion_matrix)) / size(X,1)
-
-
-%%
-C = randi(15,3,2);
-% C = [mean(VERSICOLOR);mean(VIRGINICA);mean(SETOSA)];
-idx2Region = kmeans(XGrid,3,'MaxIter',1,'Start',C);
+idx2Region = kmeans(XGrid,3,'MaxIter',1,'Start',C_new);
     % Assigns each node in the grid to the closest centroid
     
 figure;
