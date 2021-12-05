@@ -2,7 +2,7 @@
 \usepackage{mathtools}
 \usepackage[a4paper, total={6in, 8.5in}, top=1in, bottom=1in, left=1in, right=1in]{geometry}
 \usepackage{graphicx}
-\usepackage{subfig}
+%\usepackage{subfig}
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{pythonhighlight}
@@ -14,10 +14,10 @@
 \usepackage{changepage}
 \usepackage{slashbox}
 \usepackage{floatrow}
-\usepackage{subfig}
 \usepackage{listings}
 \usepackage[hidelinks]{hyperref}
 \usepackage{fontawesome}
+\usepackage{subcaption}
 \usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
 \definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
 \definecolor{mylilas}{RGB}{170,55,241}
@@ -106,33 +106,49 @@ Figure \ref{fig:q1_2fig} shows the accuracies of the iterations initialized with
 
 \section{Question 2}
 
-\begin{center}
-    \begin{figure}[h]
-        \begin{tabular}{cc}
-            \subfloat[]{\includegraphics[width = 2in, height = 1.5in]{Q2.png}} &
-            \subfloat[]{\includegraphics[width = 2in, height = 1.5in]{Q21.png}}  \\
-        \end{tabular}
-        \caption{The data distribution and partitioning}
-        \label{fig:q2fig}
-    \end{figure}
-\end{center}
+\begin{figure}[h]%
+    \centering
+    \begin{subfigure}{4cm}
+        \includegraphics[width=\linewidth]{Q2.png}
+        \caption{Case 1}\label{fig:random3}
+    \end{subfigure}
+    \qquad
+    \begin{subfigure}{4cm}
+        \includegraphics[width=4cm]{Q21.png}
+        \caption{Case 2}\label{fig:random2}
+    \end{subfigure}
+    \caption{Gaussian Fits}%
+    \label{fig:q2}%
+\end{figure}
 
-
+I have included 2 different versions of Gaussian fit to the feature vectors, due to the randomness of the algorithm. In Figure \ref{fig:random3}, I have observed 3 different Gaussian fits. However, the second trial resulted in algorithm fitting 2 different features to the same Gaussian distribution in Figure \ref{fig:random2}.
 
 \section{Question 3}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width = 6.2in, height = 3in]{Q3.png}
+    \caption{Dendrograms for different metrics}
+    \label{fig:q3fig}
+\end{figure}
 
-\begin{center}
-    \begin{figure}[h]
-        \includegraphics[width = 7in, height = 3in]{Q3.png}
-        \caption{Dendrograms for different metrics}
-        \label{fig:q3fig}
-    \end{figure}
-\end{center}
-
+All the metrics beside Hamming and Mahalanobis, resulted in similar dendrograms with easily noticeable difference in the distances in the relevant scales. However, distance calculated using Mahalanobis resulted in close numbers, hence even in
+order of $10^{-8}$ the dendrogram presentation is not clear. Hamming distance calculate the percentage of different coordinates in the data matrix $X$. Since all rows of $X$ carries unique elements, Hamming metric resulted in $100\%$ for all off the feature vectors.
 
 \pagebreak
 
 \section{Question 4}
+
+\subsection{Precomputed clustering}
+\begin{center}
+    \begin{figure}[h]
+        \begin{tabular}{cc}
+            \subfloat[]{\includegraphics[width = 2in, height = 1.5in]{Q4_8.png}} &
+            \subfloat[]{\includegraphics[width = 2in, height = 1.5in]{Q4_7.png}}   \\
+        \end{tabular}
+        \caption{Clustering for different cases}
+        \label{fig:q40fig}
+    \end{figure}
+\end{center}
 
 \subsection{Laplacian Matrix Normalization}
 \begin{center}
@@ -145,7 +161,10 @@ Figure \ref{fig:q1_2fig} shows the accuracies of the iterations initialized with
         \label{fig:q41fig}
     \end{figure}
 \end{center}
+\vspace*{-1cm}
 Using unnormalized Laplacian matrix increased the number of misclassifications.
+
+\pagebreak
 
 \subsection{Distance Metrics}
 \begin{center}
@@ -158,6 +177,7 @@ Using unnormalized Laplacian matrix increased the number of misclassifications.
         \label{fig:q42fig}
     \end{figure}
 \end{center}
+When the clustering is based on Mahalanobis distance metric, the accuracy gets bad. Since, it takes into distances to the mean of normalized distribution. On the other hand, Euclidean metrics finds the neighborhood relationship simply calculating the distance between data point on 2 dimensional feature space. Hence, the result is closer to the real distribution.
 
 \subsection{Kernel Scale}
 \begin{center}
@@ -170,6 +190,15 @@ Using unnormalized Laplacian matrix increased the number of misclassifications.
         \label{fig:q43fig}
     \end{figure}
 \end{center}
+
+Kernel scale parameter is used to scale the distance in the pairwise similarity definition:
+
+\begin{equation}
+    \label{eq:similarity}
+    S_{i,j} = e^{-(\frac{D_{i,j}}{\sigma})^2}
+\end{equation}
+
+According to Eqn. \ref{eq:similarity}, the similarity of 2 data points is exponentially proportional to the similarity. Hence, using a larger kernel scale will result in increased similarity in further data points. This is exactly what is observed in Figure \ref{fig:q43fig}. Kernel scale of 15 resulted in further points to be classified in the same cluster, hence caused misclassifications.
 
 \pagebreak
 \section{APPENDIX}
