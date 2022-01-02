@@ -110,12 +110,65 @@ Changing the split criterion from Gini's diversity index to deviance resulted in
 
 \section{Question 2}
 
+\subsection{Single tree vs Ensemble}
+
+To observe the performance difference between a single tree and the ensemble better, the number of splits were set to 1 to decrease the classification capability of the single tree. Otherwise, even the first week learner is able to classify the data accurate enough.\\
+\begin{center}
+    \begin{minipage}{0.3\textwidth}
+        $Accuracy_{first} = 0.64$
+        \end{minipage}
+        \begin{minipage}{0.3\textwidth}
+        $Accuracy_{ensemble} = 0.95$
+        \end{minipage}
+\end{center}
+The results reflect our expectations on the performance of the ensemble trained with Adaboost being better. 
+\begin{figure}[h]
+    \centering
+    {\includegraphics[width = 4in, height = 2.5in]{Q2T.png}}
+    \caption{Visualization of the first tree}
+    \label{fig:q2_tree}
+\end{figure}
+
+\subsection{Learning Rate}
+\begin{figure}[h]
+    \centering
+    {\includegraphics[width = 4in, height = 2.5in]{lr.png}}
+    \caption{Learning Rate vs Misclassification}
+    \label{fig:q2_lr}
+\end{figure}
+
+Again, the maximum number of splits is fixed among experiments, which can be seen in \ref{subsec:Q2_code}. Larger learning rates resulted ensemble to achieve higher accuracy, since the informative samples have more weights in the training process.
 
 \section{Question 3}
+\subsection{Learning Rate}
+\begin{figure}[h]
+    \centering
+    {\includegraphics[width = 4in, height = 2.5in]{Q3tree.png}}
+    \caption{First Tree}
+    \label{fig:q3_tr}
+\end{figure}
 
+The accuracy of the first tree is calculated as $0.9867$ whereas the forest's is 1. We see that, with the help of the 24 remaining tree models in the bagger, the model was able to classify the samples correctly that are misclassified by the first tree. Hence, the classification accuracy improved. 
 
 \section{Question 4}
 
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}{4cm}
+        \includegraphics[width=\linewidth]{Q4_2.png}
+        \caption{Correlation Estimate}\label{fig:q4a}
+    \end{subfigure}
+    \qquad
+    \begin{subfigure}{4cm}
+        \includegraphics[width=4cm]{Q4_1.png}
+        \caption{Median Estimate}\label{fig:q4b}
+    \end{subfigure}
+    \caption{Jackknife estimates}%
+    \label{fig:q4}%
+\end{figure}
+
+The variables are plotted with respect to different axes in both Figure \ref{fig:q4a} and \ref{fig:q4b}. The estimates and the estimated bias are calculated and printed in the title. The resultant biases are respectively low when the variance of the relative variables are taken into account.
 
 \pagebreak
 \section{APPENDIX}

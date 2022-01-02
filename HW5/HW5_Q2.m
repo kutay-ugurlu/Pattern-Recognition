@@ -29,10 +29,9 @@ confusionmatrix = confusionmat(Y_Test,preds);
 ensemble_tree_accuracy = sum(diag(confusionmatrix))/sum(sum(confusionmatrix))
 
 
-
 accs = [];
 for lr = 10.^[-8:0]
-    t = templateTree('MaxNumSplits',1);
+    t = templateTree('MaxNumSplits',3);
     Mdl = fitcensemble(feats_Train,Y_Train,'Method','AdaBoostM2', ...
     'Learners',t,'NumLearningCycles',25, 'LearnRate',lr);
     preds = predict(Mdl,feats_Test);
