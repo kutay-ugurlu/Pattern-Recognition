@@ -3,6 +3,7 @@ clear;  clc;
 chdir('..')
 addpath('export_fig')
 chdir('HW5')
+rng(101)
 %%
 load fisheriris.mat
 feats = meas(:,3:4);
