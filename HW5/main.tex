@@ -78,6 +78,35 @@
 
 \section{Question 1}
 
+\indent 3 different experiments are conducted. In each experiment, ten models are individually used to calculate the accuracy, or equivalently misclassification loss. 
+
+\subsection{Default settings}
+\vspace*{-.5cm}
+\begin{center}
+    \begin{figure}[h]
+        {\includegraphics[width = 4in, height = 2.5in]{QT_default.png}}
+        \caption{Visualization of the first tree}
+        \label{fig:q1_tree}
+    \end{figure}
+\end{center}
+\vspace*{-1cm}
+This 3 split tree resulted in a loss of $0.0267$.
+
+\subsection{Maximum number of Splits Restriction}
+\vspace*{-.5cm}
+\begin{center}
+    \begin{figure}[h]
+        {\includegraphics[width = 4in, height = 2.5in]{QT_maxsplit.png}}
+        \caption{Visualization of the second tree}
+        \label{fig:q1_tree_split}
+    \end{figure}
+\end{center}
+\vspace*{-1cm}
+For this experiment the resultant number of splits was higher than the first one. Therefore, it resulted in less misclassification loss of $0.0240$.
+
+\subsection{Maximum number of Splits Restriction}
+
+Changing the split criterion from Gini's diversity index to deviance resulted in the improvement of the accuracy.
 
 \section{Question 2}
 
@@ -90,7 +119,7 @@
 
 \pagebreak
 \section{APPENDIX}
-The code given in this section is shared \href{https://github.com/kutay-ugurlu/Pattern-Recognition/tree/master/HW4}{@\faGithubSquare}.
+The code given in this section is shared \href{https://github.com/kutay-ugurlu/Pattern-Recognition/tree/master/HW5}{@\faGithubSquare}.
 \subsection{Q1}\label{subsec:Q1_code}
 \lstinputlisting{HW5_Q1.m}
 \pagebreak

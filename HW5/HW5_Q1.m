@@ -23,7 +23,7 @@ end
 mean_loss_default = mean(Ls);
 
 %%
-tree_model = fitctree(feats,species,'CrossVal','on','MaxNumSplits',4);
+tree_model = fitctree(feats,species,'CrossVal','on','MaxNumSplits',7);
 view(tree_model.Trained{1},'Mode','graph')
 Ls = [];
 for i = 1:10
@@ -55,7 +55,8 @@ for i = 1:numel(figHandles)
     export_fig(['Q1_',num2str(i)], '-png', figHandles(i), '-append')
 end
 
-hTree=findall(0,'Tag','tree viewer'); close(hTree)
+hTree=findall(0,'Tag','tree viewer'); 
+% close(hTree)
 
 mean_loss_default
 mean_loss_restricted_splits
